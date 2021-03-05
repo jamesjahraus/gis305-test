@@ -25,15 +25,18 @@ def setup_logging(level='INFO'):
     logger.addHandler(handler)
     logger.setLevel(ll)
 
+
 def pwd():
     wd = sys.path[0]
     logger.info('wd: {0}'.format(wd))
     return wd
 
+
 def set_path(wd, data_path):
     path_name = os.path.join(wd, data_path)
     logger.info('path_name: {0}'.format(path_name))
     return path_name
+
 
 def import_spatial_reference(dataset):
     spatial_reference = arcpy.Describe(dataset).SpatialReference
@@ -68,6 +71,7 @@ def clear_selected(fc):
     # count_selected is called for verification.
     arcpy.management.SelectLayerByAttribute(fc, "CLEAR_SELECTION")
     count_selected(fc)
+
 
 def run_model(spatial_ref_dataset, ll='INFO'):
     setup_logging(ll)
@@ -105,6 +109,7 @@ def run_model(spatial_ref_dataset, ll='INFO'):
             i = i + 1
 
     print(f"Total population is: {total:,}")
+
 
 if __name__ == '__main__':
     run_model('cities')
