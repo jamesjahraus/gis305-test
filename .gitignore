@@ -1,6 +1,13 @@
 # pycharm
 .idea
 
+# ArcGIS Pro
+*.gdb
+*.aprx
+*.tbx
+Index/
+ImportLog/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
